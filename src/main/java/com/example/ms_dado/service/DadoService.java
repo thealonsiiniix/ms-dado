@@ -38,8 +38,4 @@ public class DadoService {
     public Optional<Lanzamiento> obtenerPorId(Long id) {
         return lanzamientoRepository.findById(id);
     }
-
-    public void eliminar(Long id) {
-        lanzamientoRepository.deleteById(id);
-    }
 }

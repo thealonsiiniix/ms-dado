@@ -38,16 +38,4 @@ public class DadoController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-
-        if (dadoService.obtenerPorId(id).isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        dadoService.eliminar(id);
-
-        return ResponseEntity.noContent().build();
-    }
 }
